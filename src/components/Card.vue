@@ -50,15 +50,14 @@ const setOrientation = (orientation) => {
 </script>
 <template>
     <div class="flex items-center justify-center w-full h-screen " >
-      <div class="flex items-center w-4/5 m-auto bg-white rounded-md justify-evenly h-4/5 sm:flex-col lg:flex-row " style="box-shadow: 8px 8px 55px #000000"    
+      <div class="flex flex-col items-center w-full h-full m-auto overflow-auto rounded-md lg:w-4/5 justify-evenly lg:h-4/5 sm:flex-col lg:flex-row " style="box-shadow: 8px 8px 55px #000000"    
       >
-        <div class="gap-8 flex flex-col p-9 overflow-auto w-[40%] h-4/5 custom-scrollbar" >
-          <h2 class="mb-4 text-2xl">Personnalisez votre carte</h2>
+      <div class="gap-8 flex flex-col p-9 h-auto w-full lg:overflow-auto lg:w-[40%] lg:h-4/5 custom-scrollbar  bg-white   sm:flex-col lg:flex-col " >
+        <h2 class="mb-4 text-2xl">Personnalisez votre carte</h2>
   
           <!-- Orientation -->
           <div class="mb-4">
             <label class="block text-sm font-medium">Orientation</label>
-            <!-- Div cliquables pour changer l'orientation -->
             <div class="flex space-x-4">
               <div 
               :class="[

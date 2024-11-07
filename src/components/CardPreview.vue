@@ -38,11 +38,11 @@ const qrInfo = computed(() => props.cardData.qrInfo || defaultValues.qrInfo);
 
 <template>
   <div 
-    class="flex p-6 card-container"
+    class="flex w-full p-6 card-container lg:w-[60%] h-full"
     :class="cardOrientation === 'horizontal' ? 'flex-col' : 'flex-row'"
   >
   <div class="z-10 flex flex-col justify-between pt-5 pb-5 pl-3 pr-3 rounded-lg" style="box-shadow: 8px 8px 55px #333;" 
-   :class="cardOrientation === 'horizontal' ? 'w-[400px] h-[250px]' : 'w-[400px] h-full'"
+   :class="cardOrientation === 'horizontal' ? 'w-[400px] h-[250px] ' : 'lg:w-[250px] lg:h-full  w-[250px] h-[500px]'"
   :style="{ backgroundColor: rectoBackgroundColor, color: textColor }">
 
     <div class="flex justify-between">
@@ -69,8 +69,8 @@ const qrInfo = computed(() => props.cardData.qrInfo || defaultValues.qrInfo);
   </div>
    
 
-    <div class="flex flex-col justify-between pt-5 pb-2 pl-3 pr-3 rounded-lg shadow-md" style="box-shadow: 8px 8px 55px #333;"
-    :class="cardOrientation === 'horizontal' ? 'w-[400px] h-[250px]' : 'w-[400px] h-full'"
+    <div class="flex flex-col justify-between h-full pt-5 pb-2 pl-3 pr-3 rounded-lg shadow-md" style="box-shadow: 8px 8px 55px #333;"
+    :class="cardOrientation === 'horizontal' ? 'w-[400px] h-[250px]' : 'w-[250px] h-full'"
 
     :style="{ backgroundColor: versoBackgroundColor, color: versoTextColor }
     ">
@@ -99,7 +99,6 @@ const qrInfo = computed(() => props.cardData.qrInfo || defaultValues.qrInfo);
 
 <style scoped>
 .card-container {
-  width: 60%;
   height: 80vh;
   background: url('/public/Images/backcard.82a6598a.jpg'), rgba(0, 0, 0, 0.3);
   background-blend-mode: darken;
