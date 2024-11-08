@@ -6,13 +6,13 @@ import QRCode from 'qrcode.vue';
 const defaultValues = {
   rectoBackgroundColor: '#eae6e6', 
   textColor: '#000000', 
-  logo:'/public/Images/DEVER.2af7c9b8.png',
+  logo:'/Images/DEVER.2af7c9b8.png',
   textSize: 16,
   logoSize: 50, 
   versoBackgroundColor: '#000077', 
   versoTextColor: '#ffffff', 
   qrInfo: 'https://luap-dever.me',
-  defaultLogo: '/public/Images/DEVER.2af7c9b8.png',
+  defaultLogo: '/Images/DEVER.2af7c9b8.png',
 };
 
 const props = defineProps({

@@ -6,7 +6,7 @@ import CardPreview from './CardPreview.vue';
 const emit = defineEmits();
 
 const cardOrientation = ref('horizontal');
-const logo = ref('/public/Images/DEVER.2af7c9b8.png');
+const logo = ref('/Images/DEVER.2af7c9b8.png');
 const rectoBackgroundColor = ref('#ffffff');
 const versoBackgroundColor = ref('#000077'); 
 const textColor = ref('#000000');
