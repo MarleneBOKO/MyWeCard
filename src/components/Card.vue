@@ -76,16 +76,16 @@ const setOrientation = (orientation) => {
 };
 </script>
 <template>
-    <div class="flex items-center justify-center w-full h-screen lg:px-16 md:px-16">
+    <div class="flex items-center justify-center w-full h-screen lg:px-16 md:px-16 ">
       <div class="flex flex-col items-center w-full h-full m-auto overflow-auto lg:w-4/5 justify-evenly sm:flex-col lg:flex-row ">
       
-      <div class="gap-[30px] flex flex-col p-9 h-auto w-full lg:overflow-auto sm:rounded-s   lg:rounded-s-md lg:w-[40%] lg:h-4/5 custom-scrollbar bg-white   sm:flex-col lg:flex-col "  >
+      <div class="gap-[30px] flex flex-col md:flex-col p-9 h-auto w-full lg:overflow-auto sm:rounded-s   lg:rounded-s-md lg:w-[40%] lg:h-4/5 custom-scrollbar bg-white   sm:flex-col lg:flex-col "  >
         <h2 class="mb-4 text-2xl">Personnalisez votre carte</h2>
   
           <!-- Orientation -->
           <div class="">
             <label class="block text-sm font-medium">Orientation</label>
-            <div class="mt-2 flex flex-col items-center gap-[10px] lg:flex-row lg:gap-[10px] md:flex-col">
+            <div class="mt-2 flex flex-col items-center gap-[10px] lg:flex-row lg:gap-[10px] md:flex-col sm:flex-col">
                 <!-- Option Horizontal -->
                 <div 
                 :class="[ 

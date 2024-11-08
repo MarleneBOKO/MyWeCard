@@ -6,6 +6,7 @@ import QRCode from 'qrcode.vue';
 const defaultValues = {
   rectoBackgroundColor: '#eae6e6', 
   textColor: '#000000', 
+  logo:'/public/Images/DEVER.2af7c9b8.png',
   textSize: 16,
   logoSize: 50, 
   versoBackgroundColor: '#000077', 
@@ -23,7 +24,7 @@ const props = defineProps({
 
 // Calcul des valeurs avec les valeurs par défaut
 const cardOrientation = computed(() => props.cardData.cardOrientation || 'vertical');
-const logo = computed(() => props.cardData.logo || defaultValues.defaultLogo);
+const logo = computed(() => props.cardData.logo || defaultValues.logo);
 const rectoBackgroundColor = computed(() => props.cardData.rectoBackgroundColor || defaultValues.rectoBackgroundColor);
 const textColor = computed(() => props.cardData.textColor || defaultValues.textColor);
 const textSize = computed(() => props.cardData.textSize || defaultValues.textSize);
@@ -48,7 +49,7 @@ const qrInfo = computed(() => props.cardData.qrInfo || defaultValues.qrInfo);
 
     <div class="flex justify-between">
         <div></div>
-        <img v-if="logo" :src="logo || defaultValues.defaultLogo" :style="{ height: logoSize + 'px' }" class="mr-4" />
+        <img v-if="logo" :src="logo" :style="{ height: logoSize + 'px' }" class="mr-4" />
 
     </div>
     <div class="flex ml-8" >
