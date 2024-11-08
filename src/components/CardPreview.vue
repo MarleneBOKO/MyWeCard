@@ -41,7 +41,8 @@ const qrInfo = computed(() => props.cardData.qrInfo || defaultValues.qrInfo);
     class="flex w-full p-6 card-container lg:w-[60%] h-full"
     :class="cardOrientation === 'horizontal' ? 'flex-col' : 'flex-row'"
   >
-  <div class="z-10 flex flex-col justify-between pt-5 pb-5 pl-3 pr-3 rounded-lg" style="box-shadow: 8px 8px 55px #333;" 
+  <!-- recto -->
+  <div class="z-10 flex flex-col justify-between px-[10px] py-[20px] rounded-lg" :id="'card-recto'" style="box-shadow: 8px 8px 55px #333;" 
    :class="cardOrientation === 'horizontal' ? 'w-[400px] h-[250px] ' : 'lg:w-[250px] lg:h-full  w-[250px] h-[500px]'"
   :style="{ backgroundColor: rectoBackgroundColor, color: textColor }">
 
@@ -50,7 +51,7 @@ const qrInfo = computed(() => props.cardData.qrInfo || defaultValues.qrInfo);
         <img v-if="logo" :src="logo" :style="{ height: logoSize + 'px' }" class="mr-4" />
 
     </div>
-    <div class="flex " >
+    <div class="flex ml-8" >
       <div class="text-center">
         <div class="flex space-x-2">
           <h1  class="text-base font-bold">Nom: </h1>
@@ -68,28 +69,27 @@ const qrInfo = computed(() => props.cardData.qrInfo || defaultValues.qrInfo);
     </div>
   </div>
    
-
-    <div class="flex flex-col justify-between h-full pt-5 pb-2 pl-3 pr-3 rounded-lg shadow-md" style="box-shadow: 8px 8px 55px #333;"
-    :class="cardOrientation === 'horizontal' ? 'w-[400px] h-[250px]' : 'w-[250px] h-full'"
+  <!-- // verso -->
+    <div class="flex flex-col justify-between h-full rounded-lg shadow-md px-[10px] pt-[20px] pb-[5px]"  :id="'card-verso'" style="box-shadow: 8px 8px 55px #333;"
+    :class="cardOrientation === 'horizontal' ? 'w-[400px] h-[250px]' : 'lg:w-[250px] lg:h-full w-[250px] h-[500px]'"
 
     :style="{ backgroundColor: versoBackgroundColor, color: versoTextColor }
     ">
     <div class="flex flex-col "
-    :class="cardOrientation === 'horizontal' ? ' items-center justify-between h-full' :  'items-center justify-between h-full '"
+    :class="cardOrientation === 'horizontal' ? ' items-center justify-end gap-[30px] h-full' :  ' justify-end items-center gap-[30px] h-full '"
     >
-      <div class="flex items-center justify-center"
-
       
-      >
-       
-      </div>
-      <QRCode v-if="qrInfo" :value="qrInfo" size="120" class="flex items-end"/>
+      <QRCode v-if="qrInfo" :value="qrInfo" size="120" class="flex "    
+      />
 
       <div class="flex justify-between w-full" >
-        <h1 class="text-xl" :style="{ color: versoTextColor }">                
-                WeCard
-                <sup class="text-black bg-white  rounded text-[10px] p-1">Pro</sup>
-                </h1>
+        <h1 class="mb-2 text-xl" :style="{ color: versoTextColor }">                
+        WeCard
+        <sup class="inline-flex items-center justify-center text-black w-[23px] h-[16px] bg-white rounded text-[10px] p-1">
+            Pro
+  </sup>
+</h1>
+
             <img src="/public/Images/wireless.878de477.png" alt="" class="w-[10px] h-[10px]" />
         </div>
     </div>
