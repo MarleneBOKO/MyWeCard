@@ -10,7 +10,7 @@
       <p class="mb-6 text-sm">Site pour générer votre carte de visite basée sur un design personnalisé.</p>
       <router-link 
         to="/createcard" 
-        class="px-4 py-2 text-[#004] bg-[#fff]  fjex justify-center items-center w-48 h-10  transition-[3s] rounded-[8px]"
+        class="px-4 py-2 text-[#004] bg-[#fff] border flex justify-center hover:border-white hover:text-white hover:bg-[#004] items-center w-48 h-10  transition-[3s] rounded-[8px]"
       >
         Créer votre carte
       </router-link>
