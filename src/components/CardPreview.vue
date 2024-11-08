@@ -48,7 +48,7 @@ const qrInfo = computed(() => props.cardData.qrInfo || defaultValues.qrInfo);
 
     <div class="flex justify-between">
         <div></div>
-        <img v-if="logo" :src="logo" :style="{ height: logoSize + 'px' }" class="mr-4" />
+        <img v-if="logo" :src="logo || defaultValues.defaultLogo" :style="{ height: logoSize + 'px' }" class="mr-4" />
 
     </div>
     <div class="flex ml-8" >
