@@ -79,7 +79,7 @@ const setOrientation = (orientation) => {
     <div class="flex items-center justify-center w-full h-screen lg:px-16 md:px-16">
       <div class="flex flex-col items-center w-full h-full m-auto overflow-auto lg:w-4/5 justify-evenly sm:flex-col lg:flex-row ">
       
-      <div class="gap-[30px] flex flex-col p-9 h-auto w-full lg:overflow-auto sm:rounded-s   lg:rounded-s-md lg:w-[40%] lg:h-4/5 custom-scrollbar bg-white   sm:flex-col lg:flex-col " style="box-shadow: 8px 8px 55px #000008;" >
+      <div class="gap-[30px] flex flex-col p-9 h-auto w-full lg:overflow-auto sm:rounded-s   lg:rounded-s-md lg:w-[40%] lg:h-4/5 custom-scrollbar bg-white   sm:flex-col lg:flex-col "  >
         <h2 class="mb-4 text-2xl">Personnalisez votre carte</h2>
   
           <!-- Orientation -->
