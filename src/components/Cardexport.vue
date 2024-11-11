@@ -20,7 +20,7 @@ onMounted(() => {
         <img :src="rectoImage" alt="Recto" class="max-w-full max-h-full rounded-lg sm:rounded-lg lg:rounded-lg" :class="cardOrientation === 'vertical' ? 'w-[250px] h-full' : 'w-[400px] h-[250px]'"/>
       </div>
       <div  :class="cardOrientation === 'vertical' ? 'w-[250px] h-full' : 'w-[400px] h-[250px]'">
-        <img :src="versoImage" alt="Verso" class="max-w-full max-h-full sm:rounded-lg lg:rounded-lg" :class="cardOrientation === 'vertical' ? 'w-[250px] h-full' : 'w-[400px] h-[250px]'"/>
+        <img :src="versoImage" alt="Verso" class="max-w-full max-h-full rounded-lg sm:rounded-lg lg:rounded-lg" :class="cardOrientation === 'vertical' ? 'w-[250px] h-full' : 'w-[400px] h-[250px]'"/>
       </div>
     </div>
   </div>

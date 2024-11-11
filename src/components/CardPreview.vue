@@ -37,12 +37,12 @@ const qrInfo = computed(() => props.cardData.qrInfo || defaultValues.qrInfo);
 
 <template>
   <div 
-    class="flex w-full p-6 card-container lg:w-[60%] h-full"
+    class="flex w-full px-12 py-6 card-container lg:w-[60%] h-full"
     :class="cardOrientation === 'horizontal' ? 'flex-col' : 'flex-row'"
   >
   <!-- recto -->
   <div class=" flex flex-col justify-between px-[10px] py-[20px] rounded-lg" :id="'card-recto'"  style="padding: 20px 10px;"
-   :class="cardOrientation === 'horizontal' ? 'w-[400px] h-[250px] ' : 'lg:w-[250px] lg:h-[500px]  w-[250px] h-[500px]'"
+   :class="cardOrientation === 'horizontal' ? 'w-[400px] h-[250px] ' : 'lg:w-[250px] lg:h-[400px]  w-[250px] h-[400px]'"
   :style="{ backgroundColor: rectoBackgroundColor, color: textColor }">
 
     <div class="flex justify-between max-h-[100px]">
@@ -70,12 +70,12 @@ const qrInfo = computed(() => props.cardData.qrInfo || defaultValues.qrInfo);
    
   <!-- // verso -->
     <div class="flex flex-col justify-between rounded-lg shadow-md "  :id="'card-verso'" style="padding: 20px 10px 5px;"
-    :class="cardOrientation === 'horizontal' ? 'w-[400px] h-[250px]' : 'lg:w-[250px] lg:h-[500px] w-[250px] h-[500px]'"
+    :class="cardOrientation === 'horizontal' ? 'w-[400px] h-[250px]' : 'lg:w-[250px] lg:h-[400px] w-[250px] h-[400px]'"
 
     :style="{ backgroundColor: versoBackgroundColor, color: versoTextColor }
     ">
     <div class="flex flex-col "
-    :class="cardOrientation === 'horizontal' ? ' items-center justify-end gap-[30px] h-full' :  ' justify-end items-center gap-[30px] h-full '"
+    :class="cardOrientation === 'horizontal' ? ' items-center justify-end gap-[30px] ' :  ' justify-end items-center gap-[30px]  '"
     >
       
       <QRCode v-if="qrInfo" :value="qrInfo"  class="flex w-[100px] h-[100px]"    
