@@ -52,7 +52,7 @@ const generateCardImage = async () => {
 
   try {
     const canvasRecto = await html2canvas(rectoElement, { backgroundColor: 'none', useCORS: true });
-const canvasVerso = await html2canvas(versoElement, { backgroundColor: 'white', useCORS: true });
+const canvasVerso = await html2canvas(versoElement, { backgroundColor: 'none', useCORS: true });
 console.log(canvasRecto)
     const imageDataRecto = canvasRecto.toDataURL('image/png');
     const imageDataVerso = canvasVerso.toDataURL('image/png');

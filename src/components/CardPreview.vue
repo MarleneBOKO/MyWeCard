@@ -41,7 +41,7 @@ const qrInfo = computed(() => props.cardData.qrInfo || defaultValues.qrInfo);
     :class="cardOrientation === 'horizontal' ? 'flex-col' : 'flex-row'"
   >
   <!-- recto -->
-  <div class=" flex flex-col justify-between px-[10px] py-[20px] rounded-lg" :id="'card-recto'"  
+  <div class=" flex flex-col justify-between px-[10px] py-[20px] rounded-lg" :id="'card-recto'"  style="padding: 20px 10px;"
    :class="cardOrientation === 'horizontal' ? 'w-[400px] h-[250px] ' : 'lg:w-[250px] lg:h-[500px]  w-[250px] h-[500px]'"
   :style="{ backgroundColor: rectoBackgroundColor, color: textColor }">
 
@@ -69,7 +69,7 @@ const qrInfo = computed(() => props.cardData.qrInfo || defaultValues.qrInfo);
   </div>
    
   <!-- // verso -->
-    <div class="flex flex-col justify-between rounded-lg shadow-md "  :id="'card-verso'" 
+    <div class="flex flex-col justify-between rounded-lg shadow-md "  :id="'card-verso'" style="padding: 20px 10px 5px;"
     :class="cardOrientation === 'horizontal' ? 'w-[400px] h-[250px]' : 'lg:w-[250px] lg:h-[500px] w-[250px] h-[500px]'"
 
     :style="{ backgroundColor: versoBackgroundColor, color: versoTextColor }
@@ -78,10 +78,10 @@ const qrInfo = computed(() => props.cardData.qrInfo || defaultValues.qrInfo);
     :class="cardOrientation === 'horizontal' ? ' items-center justify-end gap-[30px] h-full' :  ' justify-end items-center gap-[30px] h-full '"
     >
       
-      <QRCode v-if="qrInfo" :value="qrInfo" size="120" class="flex "    
+      <QRCode v-if="qrInfo" :value="qrInfo"  class="flex w-[100px] h-[100px]"    
       />
 
-      <div class="flex justify-between w-full px-[5px] mb-[10px]" >
+      <div class="flex justify-between w-full" >
         <h1 class="text-xl " :style="{ color: versoTextColor }">                
         WeCard
         <sup class="inline-flex items-center justify-center text-black w-[23px] h-[16px] bg-white rounded text-[10px] p-1">
@@ -89,7 +89,7 @@ const qrInfo = computed(() => props.cardData.qrInfo || defaultValues.qrInfo);
   </sup>
 </h1>
 
-            <img src="/public/Images/wireless.878de477.png" alt="" class="w-[10px] h-[10px] mt-4" />
+            <img src="/public/Images/wireless.878de477.png" alt="" class="w-[10px] h-[10px] " />
         </div>
     </div>
     </div>
