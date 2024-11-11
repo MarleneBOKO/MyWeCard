@@ -69,7 +69,7 @@ const qrInfo = computed(() => props.cardData.qrInfo || defaultValues.qrInfo);
   </div>
    
   <!-- // verso -->
-    <div class="flex flex-col justify-between rounded-lg shadow-md "  :id="'card-verso'" style="padding: 20px 10px 5px;"
+    <div class="flex flex-col justify-between rounded-lg shadow-md "  :id="'card-verso'"
     :class="cardOrientation === 'horizontal' ? 'w-[400px] h-[250px]' : 'lg:w-[250px] lg:h-[400px] w-[250px] h-[400px]'"
 
     :style="{ backgroundColor: versoBackgroundColor, color: versoTextColor }
