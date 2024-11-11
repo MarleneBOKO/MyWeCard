@@ -18,7 +18,7 @@ const props = defineProps({
             <img :src="rectoImage" alt="Recto" class="max-w-full max-h-full sm:rounded-lg lg:rounded-lg"   :class="cardOrientation === 'vertical' ? 'w-[250px] h-full' : 'w-[400px] h-[250px]'"/>
 
           </div>
-          <div class="w-[250px]" style="box-shadow: 0 0 80px #0006;">
+          <div class="w-[250px] h-full" style="box-shadow: 0 0 80px #0006;">
             <img :src="versoImage" alt="Verso" class="max-w-full max-h-full sm:rounded-lg lg:rounded-lg"  :class="cardOrientation === 'vertical' ? 'w-[250px] h-full' : 'w-[400px] h-[250px]'" />
           </div>
         </div>
