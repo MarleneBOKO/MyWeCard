@@ -2,7 +2,6 @@
 import { computed } from 'vue';
 import QRCode from 'qrcode.vue';
 
-// Valeurs par défaut
 const defaultValues = {
   rectoBackgroundColor: '#eae6e6', 
   textColor: '#000000', 
@@ -22,7 +21,6 @@ const props = defineProps({
   },
 });
 
-// Calcul des valeurs avec les valeurs par défaut
 const cardOrientation = computed(() => props.cardData.cardOrientation || 'vertical');
 const logo = computed(() => props.cardData.logo || defaultValues.logo);
 const rectoBackgroundColor = computed(() => props.cardData.rectoBackgroundColor || defaultValues.rectoBackgroundColor);
@@ -44,10 +42,10 @@ const qrInfo = computed(() => props.cardData.qrInfo || defaultValues.qrInfo);
   >
   <!-- recto -->
   <div class="z-10 flex flex-col justify-between px-[10px] py-[20px] rounded-lg" :id="'card-recto'" style="box-shadow: 8px 8px 55px #333;" 
-   :class="cardOrientation === 'horizontal' ? 'w-[400px] h-[250px] ' : 'lg:w-[250px] lg:h-full  w-[250px] h-[500px]'"
+   :class="cardOrientation === 'horizontal' ? 'w-[400px] h-[250px] ' : 'lg:w-[250px] lg:h-[500px]  w-[250px] h-[500px]'"
   :style="{ backgroundColor: rectoBackgroundColor, color: textColor }">
 
-    <div class="flex justify-between">
+    <div class="flex justify-between max-h-[100px]">
         <div></div>
         <img v-if="logo" :src="logo" :style="{ height: logoSize + 'px' }" class="mr-4" />
 
@@ -72,7 +70,7 @@ const qrInfo = computed(() => props.cardData.qrInfo || defaultValues.qrInfo);
    
   <!-- // verso -->
     <div class="flex flex-col justify-between rounded-lg shadow-md "  :id="'card-verso'" style="box-shadow: 8px 8px 55px #333;"
-    :class="cardOrientation === 'horizontal' ? 'w-[400px] h-[250px]' : 'lg:w-[250px] lg:h-full w-[250px] h-[500px]'"
+    :class="cardOrientation === 'horizontal' ? 'w-[400px] h-[250px]' : 'lg:w-[250px] lg:h-[500px] w-[250px] h-[500px]'"
 
     :style="{ backgroundColor: versoBackgroundColor, color: versoTextColor }
     ">
