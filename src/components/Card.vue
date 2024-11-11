@@ -12,7 +12,7 @@ const rectoBackgroundColor = ref('#ffffff');
 const versoBackgroundColor = ref('#000077'); 
 const textColor = ref('#000000');
 const versoTextColor = ref('#ffffff'); 
-const textSize = ref(20);
+const textSize = ref(15);
 const logoSize = ref(100); 
 const name = ref('');
 const surname = ref('');
@@ -71,7 +71,7 @@ const generateCardImage = async () => {
       useCORS: true,
       style: { 
         fontFamily: 'inherit',  
-        fontSize: 'inherit',    
+        fontSize: '12px',    
         lineHeight: 'inherit',  
       },
       ignoreElements: (element) => {
@@ -108,7 +108,7 @@ const setOrientation = (orientation) => {
         <h2 class="mb-4 text-2xl">Personnalisez votre carte</h2>
   
           <div class="">
-            <label class="block text-sm font-medium">Orientation</label>
+            <label class="block font-medium text-[15px]">Orientation</label>
             <div class="mt-2 flex flex-col items-center gap-[10px] lg:flex-row lg:gap-[10px] md:flex-col sm:flex-col">
                 <div 
                 :class="[ 
@@ -145,54 +145,54 @@ const setOrientation = (orientation) => {
 
   
           <div class="">
-            <label class="block text-sm font-medium">Logo</label>
+            <label class="block font-medium text-[15px]">Logo</label>
             <input type="file" @change="handleLogoUpload" class="w-full h-10 p-2 rounded-lg" />
           </div>
   
           <div class="">
-            <label class="block text-sm font-medium">Couleur du fond (Recto)</label>
+            <label class="block font-medium text-[15px]">Couleur du fond (Recto)</label>
             <input type="color" v-model="rectoBackgroundColor" class="w-full h-10 border border-gray-400 rounded-lg p-1.5" />
           </div>
   
           <div class="">
-            <label class="block text-sm font-medium">Couleur du texte</label>
+            <label class="block font-medium text-[15px]">Couleur du texte</label>
             <input type="color" v-model="textColor" class="w-full h-10 border border-gray-400 rounded-lg p-1.5" />
           </div>
   
           <div class="">
-            <label class="block text-sm font-medium">Taille du logo </label>
+            <label class="block font-medium text-[15px]">Taille du logo </label>
             <input type="range" v-model="logoSize" min="10" max="200" class="w-full" />
           </div>
   
           <div class="">
-            <label class="block text-sm font-medium">Nom</label>
+            <label class="block font-medium text-[15px]">Nom</label>
             <input type="text" v-model="name" class="w-full h-10 border border-gray-400 rounded-lg p-1.5" />
           </div>
   
           <div class="">
-            <label class="block text-sm font-medium">Prénom</label>
+            <label class="block font-medium text-[15px]">Prénom</label>
             <input type="text" v-model="surname" class="w-full h-10 border border-gray-400 rounded-lg p-1.5" />
           </div>
   
           <div class="">
-            <label class="block text-sm font-medium">Titre</label>
+            <label class="block font-medium text-[15px]">Titre</label>
             <input type="text" v-model="title" class="w-full h-10 border border-gray-400 rounded-lg p-1.5" />
           </div>
   
           <h2 class="text-2xl ">Personnalisez le verso de votre carte</h2>
   
           <div class="">
-            <label class="block text-sm font-medium">Couleur du fond (Verso)</label>
-            <input type="color" v-model="versoBackgroundColor" class="w-full h-10 border border-gray-400 rounded-lg p-1.5" />
+            <label class="block font-medium text-[15px]">Couleur du fond (Verso)</label>
+            <input type="color" v-model="versoBackgroundColor" class="w-full h-10 border border-gray-400 rounded-lg p-1.5 text-[15px]" />
           </div>
   
           <div class="">
-            <label class="block text-sm font-medium">Couleur du texte (Verso)</label>
+            <label class="block font-medium text-[15px]">Couleur du texte (Verso)</label>
             <input type="color" v-model="versoTextColor" class="w-full h-10 border border-gray-400 rounded-lg p-1.5" />
           </div>
   
           <div class="">
-            <label class="block text-sm font-medium">QR Info (Verso)</label>
+            <label class="block font-medium text-[15px]">QR Info (Verso)</label>
             <input type="text" v-model="qrInfoVerso" class="w-full h-10 border border-gray-400 rounded-lg p-1.5" />
           </div>
   

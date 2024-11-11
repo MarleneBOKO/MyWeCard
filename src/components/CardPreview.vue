@@ -6,7 +6,7 @@ const defaultValues = {
   rectoBackgroundColor: '#eae6e6', 
   textColor: '#000000', 
   logo:'/Images/DEVER.2af7c9b8.png',
-  textSize: 16,
+  textSize: 15,
   logoSize: 50, 
   versoBackgroundColor: '#000077', 
   versoTextColor: '#ffffff', 
@@ -53,16 +53,16 @@ const qrInfo = computed(() => props.cardData.qrInfo || defaultValues.qrInfo);
     <div class="flex ml-8" >
       <div class="text-center">
         <div class="flex space-x-2">
-          <h1  class="text-base font-bold">Nom: </h1>
-          <span>{{ name }}</span>
+          <h1  class="text-[15px] font-bold">Nom: </h1>
+          <span class="text-[15px]">{{ name }}</span>
         </div>
         <div class="flex space-x-2">
-          <h1  class="text-base font-bold">Prénoms: </h1>
-          <span>{{ surname }}</span>
+          <h1  class="text-[15px] font-bold">Prénoms: </h1>
+          <span class="text-[15px]">{{ surname }}</span>
         </div>
         <div class="flex space-x-2">
-          <h1 class="text-base font-bold">Titre: </h1>
-          <span> {{ title }}</span>
+          <h1 class="text-[15px] font-bold">Titre: </h1>
+          <span class="text-[15px]"> {{ title }}</span>
         </div>
       </div>
     </div>
@@ -82,9 +82,9 @@ const qrInfo = computed(() => props.cardData.qrInfo || defaultValues.qrInfo);
       />
 
       <div class="flex justify-between w-full" >
-        <h1 class="mb-2 text-xl" :style="{ color: versoTextColor }">                
+        <h1 class="mb-2 text-[15px]" :style="{ color: versoTextColor }">                
         WeCard
-        <sup class="inline-flex items-center justify-center text-black w-[23px] h-[16px] bg-white rounded text-[10px] p-1 mt-4">
+        <sup class=" items-center justify-center text-black w-[23px] h-[16px] bg-white rounded text-[10px] p-1 mt-10">
             Pro
   </sup>
 </h1>
