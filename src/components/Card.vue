@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import router from '../router';
 import html2canvas from 'html2canvas';
 import CardPreview from './CardPreview.vue';
+
 const emit = defineEmits();
 
 const cardOrientation = ref('horizontal');
@@ -17,7 +18,10 @@ const name = ref('');
 const surname = ref('');
 const title = ref('');
 const qrInfoVerso = ref(''); 
-const showPreview = ref(false); 
+const showPreview = ref(false);
+
+// Nouvelle variable pour l'état de chargement
+const isLoading = ref(false); 
 
 const handleLogoUpload = (event) => {
   const file = event.target.files[0];
@@ -31,16 +35,20 @@ const handleLogoUpload = (event) => {
 };
 
 const generateCardImage = async () => {
+  isLoading.value = true;  // Mettre isLoading à true au début de la génération de l'image
+
   const rectoElement = document.getElementById('card-recto');  
   const versoElement = document.getElementById('card-verso');  
   
   if (!rectoElement) {
     console.error('Élément recto non trouvé');
+    isLoading.value = false;  // Mettre isLoading à false en cas d'erreur
     return;
   }
   
   if (!versoElement) {
     console.error('Élément verso non trouvé');
+    isLoading.value = false;  // Mettre isLoading à false en cas d'erreur
     return;
   }
 
@@ -61,16 +69,16 @@ const generateCardImage = async () => {
     });
   } catch (error) {
     console.error("Erreur lors de la capture de l'image : ", error);
+  } finally {
+    isLoading.value = false;  // Mettre isLoading à false après la génération (ou erreur)
   }
 };
-
-
-
 
 const setOrientation = (orientation) => {
   cardOrientation.value = orientation;
 };
 </script>
+
 <template>
     <div class="flex items-center justify-center w-full h-screen lg:px-16 md:px-16 ">
       <div class="flex flex-col items-center w-full h-full m-auto overflow-auto lg:w-4/5 justify-evenly sm:flex-col lg:flex-row ">

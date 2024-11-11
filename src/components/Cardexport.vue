@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
-const cardOrientation = ref(route.query.orientation || 'horizontal'); // Récupère l'orientation ou 'horizontal' par défaut
+const cardOrientation = ref(route.query.orientation || 'horizontal'); 
 
 const props = defineProps({
   rectoImage: String,
