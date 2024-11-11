@@ -51,9 +51,34 @@ const generateCardImage = async () => {
   }
 
   try {
-    const canvasRecto = await html2canvas(rectoElement, { backgroundColor: 'none', useCORS: true });
-const canvasVerso = await html2canvas(versoElement, { backgroundColor: 'none', useCORS: true });
-console.log(canvasRecto)
+    // Capturer l'image du recto sans les styles par défaut
+    const canvasRecto = await html2canvas(rectoElement, { 
+      backgroundColor: 'none', 
+      useCORS: true,
+      style: { 
+        fontFamily: 'inherit', 
+        fontSize: 'inherit',    
+        lineHeight: 'inherit',  
+        
+      },
+      ignoreElements: (element) => {
+        return element.classList.contains('ignore-for-screenshot');
+      }
+    });
+
+    const canvasVerso = await html2canvas(versoElement, { 
+      backgroundColor: 'none', 
+      useCORS: true,
+      style: { 
+        fontFamily: 'inherit',  
+        fontSize: 'inherit',    
+        lineHeight: 'inherit',  
+      },
+      ignoreElements: (element) => {
+        return element.classList.contains('ignore-for-screenshot');
+      }
+    });
+
     const imageDataRecto = canvasRecto.toDataURL('image/png');
     const imageDataVerso = canvasVerso.toDataURL('image/png');
 

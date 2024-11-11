@@ -69,7 +69,7 @@ const qrInfo = computed(() => props.cardData.qrInfo || defaultValues.qrInfo);
   </div>
    
   <!-- // verso -->
-    <div class="flex flex-col justify-between rounded-lg shadow-md "  :id="'card-verso'"
+    <div class="flex flex-col justify-between rounded-lg shadow-md "  :id="'card-verso'" style="padding: 20px 10px 5px;"
     :class="cardOrientation === 'horizontal' ? 'w-[400px] h-[250px]' : 'lg:w-[250px] lg:h-[400px] w-[250px] h-[400px]'"
 
     :style="{ backgroundColor: versoBackgroundColor, color: versoTextColor }
@@ -82,9 +82,9 @@ const qrInfo = computed(() => props.cardData.qrInfo || defaultValues.qrInfo);
       />
 
       <div class="flex justify-between w-full" >
-        <h1 class="text-xl " :style="{ color: versoTextColor }">                
+        <h1 class="mb-2 text-xl" :style="{ color: versoTextColor }">                
         WeCard
-        <sup class="inline-flex items-center justify-center text-black w-[23px] h-[16px] bg-white rounded text-[10px] p-1">
+        <sup class="inline-flex items-center justify-center text-black w-[23px] h-[16px] bg-white rounded text-[10px] p-1 mt-4">
             Pro
   </sup>
 </h1>
