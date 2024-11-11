@@ -75,7 +75,7 @@ const qrInfo = computed(() => props.cardData.qrInfo || defaultValues.qrInfo);
     :style="{ backgroundColor: versoBackgroundColor, color: versoTextColor }
     ">
     <div class="flex flex-col "
-    :class="cardOrientation === 'horizontal' ? ' items-center justify-end gap-[30px] ' :  ' justify-end items-center gap-[30px]  '"
+    :class="cardOrientation === 'horizontal' ? ' items-center justify-end gap-[30px] h-full' :  ' justify-end items-center gap-[30px] h-full '"
     >
       
       <QRCode v-if="qrInfo" :value="qrInfo"  class="flex w-[100px] h-[100px]"    
