@@ -20,7 +20,6 @@ const title = ref('');
 const qrInfoVerso = ref(''); 
 const showPreview = ref(false);
 
-// Nouvelle variable pour l'état de chargement
 const isLoading = ref(false); 
 
 const handleLogoUpload = (event) => {
@@ -35,27 +34,24 @@ const handleLogoUpload = (event) => {
 };
 
 const generateCardImage = async () => {
-  isLoading.value = true;  // Mettre isLoading à true au début de la génération de l'image
+  isLoading.value = true;  
 
   const rectoElement = document.getElementById('card-recto');  
   const versoElement = document.getElementById('card-verso');  
   
   if (!rectoElement) {
     console.error('Élément recto non trouvé');
-    isLoading.value = false;  // Mettre isLoading à false en cas d'erreur
+    isLoading.value = false;  
     return;
   }
-  
   if (!versoElement) {
     console.error('Élément verso non trouvé');
-    isLoading.value = false;  // Mettre isLoading à false en cas d'erreur
+    isLoading.value = false;  
     return;
   }
-
   try {
     const canvasRecto = await html2canvas(rectoElement);
     const imageDataRecto = canvasRecto.toDataURL('image/png');
-    
     const canvasVerso = await html2canvas(versoElement);
     const imageDataVerso = canvasVerso.toDataURL('image/png');
 
@@ -70,7 +66,7 @@ const generateCardImage = async () => {
   } catch (error) {
     console.error("Erreur lors de la capture de l'image : ", error);
   } finally {
-    isLoading.value = false;  // Mettre isLoading à false après la génération (ou erreur)
+    isLoading.value = false;  
   }
 };
 
@@ -178,9 +174,14 @@ const setOrientation = (orientation) => {
           <button 
           @click="generateCardImage"
           class="px-[15px] py-[10px] flex justify-center items-center text-white transition rounded-lg border bg-[#000077] hover:bg-white hover:text-[#000077] w-full h-9 hover:border-[#000077]"
-          >
-            Preview
-          </button>
+        >
+          Preview
+        </button>
+        
+        <div v-if="isLoading" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50">
+          <div class="text-xl text-white">Chargement...</div>
+        </div>
+
         </div>
   
         <CardPreview 
