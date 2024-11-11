@@ -11,10 +11,7 @@ const routes = [
     path: '/preview',
     name: 'Cardexport',
     component: Cardexport,
-    props: route => ({
-      rectoImage: route.query.rectoImage,
-      versoImage: route.query.versoImage
-    })
+   
   }
 ];
 

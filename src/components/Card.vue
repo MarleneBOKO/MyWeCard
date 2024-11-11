@@ -34,41 +34,40 @@ const handleLogoUpload = (event) => {
 };
 
 const generateCardImage = async () => {
-  isLoading.value = true;  
+  isLoading.value = true;
 
-  const rectoElement = document.getElementById('card-recto');  
-  const versoElement = document.getElementById('card-verso');  
-  
+  const rectoElement = document.getElementById('card-recto');
+  const versoElement = document.getElementById('card-verso');
+
   if (!rectoElement) {
     console.error('Élément recto non trouvé');
-    isLoading.value = false;  
+    isLoading.value = false;
     return;
   }
   if (!versoElement) {
     console.error('Élément verso non trouvé');
-    isLoading.value = false;  
+    isLoading.value = false;
     return;
   }
+
   try {
     const canvasRecto = await html2canvas(rectoElement);
     const imageDataRecto = canvasRecto.toDataURL('image/png');
     const canvasVerso = await html2canvas(versoElement);
     const imageDataVerso = canvasVerso.toDataURL('image/png');
 
-    router.push({
-      name: 'Cardexport',
-      query: {
-        rectoImage: imageDataRecto,
-        versoImage: imageDataVerso,
-        orientation: cardOrientation.value  
-      }
-    });
+    localStorage.setItem('rectoImage', imageDataRecto);
+    localStorage.setItem('versoImage', imageDataVerso);
+    localStorage.setItem('orientation', cardOrientation.value);
+
+    router.push('/preview');
   } catch (error) {
     console.error("Erreur lors de la capture de l'image : ", error);
   } finally {
-    isLoading.value = false;  
+    isLoading.value = false;
   }
 };
+
 
 const setOrientation = (orientation) => {
   cardOrientation.value = orientation;
